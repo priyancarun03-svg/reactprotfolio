@@ -1,0 +1,10 @@
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  padding: 2.2rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+.footer span { color: var(--rose); font-weight: 600; }
+.footer__meta { margin-top: 0.4rem; font-size: 0.78rem; opacity: 0.7; }

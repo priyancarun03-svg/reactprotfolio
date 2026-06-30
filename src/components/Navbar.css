@@ -1,0 +1,86 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s var(--ease), border-color 0.4s var(--ease), backdrop-filter 0.4s;
+}
+.nav--scrolled {
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.nav__inner {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.nav__logo span { color: var(--rose); }
+
+.nav__links { display: flex; gap: 2.1rem; list-style: none; }
+.nav__links a {
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--muted);
+  position: relative;
+  transition: color 0.25s;
+}
+.nav__links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0;
+  width: 0; height: 2px;
+  background: var(--rose);
+  transition: width 0.3s var(--ease);
+}
+.nav__links a:hover { color: var(--rose); }
+.nav__links a:hover::after { width: 100%; }
+
+.nav__controls { display: flex; gap: 0.6rem; align-items: center; }
+.icon-btn {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+}
+.icon-btn:hover { border-color: var(--rose); color: var(--rose); transform: translateY(-2px); }
+.nav__menu-btn { display: none; border-radius: 10px; }
+
+.mobile-menu {
+  position: fixed;
+  top: 68px; left: 0; right: 0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  z-index: 99;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-menu a {
+  padding: 0.9rem 1.75rem;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+  border-bottom: 1px solid var(--line);
+}
+.mobile-menu a:hover { color: var(--rose); background: var(--surface-2); }
+
+@media (max-width: 820px) {
+  .nav__links { display: none; }
+  .nav__menu-btn { display: flex; }
+}
