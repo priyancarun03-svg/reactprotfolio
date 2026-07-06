@@ -1,0 +1,72 @@
+.projects { background: var(--surface-2); }
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.7rem;
+  margin-top: 2.5rem;
+}
+.project-reveal { will-change: transform; }
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.project-banner {
+  height: 168px;
+  position: relative;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0.8rem;
+  background: linear-gradient(135deg, var(--rose-light) 0%, var(--surface-2) 100%);
+}
+.project-banner__icon {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(150deg, var(--rose), var(--rose-deep));
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 8px 22px rgba(194, 37, 92, 0.35);
+}
+.project-banner__tags {
+  position: absolute; bottom: 12px; left: 12px;
+  display: flex; gap: 0.4rem;
+}
+.project-banner__tags span {
+  font-size: 0.68rem; font-weight: 700;
+  background: var(--surface);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+.project-body { padding: 1.5rem; }
+.project-num {
+  font-family: var(--font-mono);
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--rose); margin-bottom: 0.45rem;
+}
+.project-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem; font-weight: 600;
+  margin-bottom: 0.55rem;
+}
+.project-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.2rem; }
+.project-links { display: flex; gap: 0.7rem; }
+.project-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.8rem; font-weight: 700;
+  color: #fff; background: var(--rose);
+  text-decoration: none;
+  padding: 0.5rem 0.95rem;
+  border-radius: 8px;
+  transition: all 0.25s var(--ease);
+}
+.project-link:hover { background: var(--rose-deep); transform: translateY(-2px); }
+.project-link--ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.project-link--ghost:hover { border-color: var(--rose); color: var(--rose); }
